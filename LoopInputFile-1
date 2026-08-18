@@ -1,0 +1,36 @@
+[
+  { 
+    "SchemaParameter" : "dbo",
+    "TableParameter" : "DimUser",
+    "CDCcolParameter" : "updated_at",
+    "From_Date_Parameter" : ""
+  },
+
+  { 
+    "SchemaParameter" : "dbo",
+    "TableParameter" : "DimArtist",
+    "CDCcolParameter" : "updated_at",
+    "From_Date_Parameter" : ""
+  },
+
+  { 
+    "SchemaParameter" : "dbo",
+    "TableParameter" : "DimDate",
+    "CDCcolParameter" : "Date",
+    "From_Date_Parameter" : ""
+  },
+
+  { 
+    "SchemaParameter" : "dbo",
+    "TableParameter" : "DimTrack",
+    "CDCcolParameter" : "updated_at",
+    "From_Date_Parameter" : ""
+  },
+
+  { 
+    "SchemaParameter" : "dbo",
+    "TableParameter" : "FactStream",
+    "CDCcolParameter" : "stream_timestamp",
+    "From_Date_Parameter" : ""
+  },
+]
