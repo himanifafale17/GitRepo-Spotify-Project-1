@@ -97,7 +97,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT * FROM @{item().SchemaParameter}.@{item().TableParameter} WHERE @{item().CDCcolParameter} > '@{if(empty(item().From_Date_Parameter), activity('LastCDCLookup1_2').output.firstRow.cdc, item().From_Date_Parameter)}'",
+									"sqlReaderQuery": {
+										"value": "SELECT * FROM @{item().SchemaParameter}.@{item().TableParameter} WHERE @{item().CDCcolParameter} > '@{if(empty(item().From_Date_Parameter), activity('LastCDCLookup1_2').output.firstRow.cdc, item().From_Date_Parameter)}'",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -211,7 +214,10 @@
 											"scripts": [
 												{
 													"type": "Query",
-													"text": "SELECT MAX (@{item().CDCcolParameter}) AS cdc FROM @{item().SchemaParameter}.@{item().TableParameter}"
+													"text": {
+														"value": "SELECT MAX (@{item().CDCcolParameter}) AS cdc FROM @{item().SchemaParameter}.@{item().TableParameter}",
+														"type": "Expression"
+													}
 												}
 											],
 											"scriptBlockExecutionTimeout": "02:00:00"
