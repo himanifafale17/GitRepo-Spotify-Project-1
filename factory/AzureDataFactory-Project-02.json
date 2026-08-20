@@ -1,0 +1,15 @@
+{
+	"name": "AzureDataFactory-Project-02",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "34136955-4647-4a05-add3-4e2286c3bb85",
+		"tenantId": "37bd1843-a5cd-495b-a2c3-ce9149875c8a"
+	}
+}
