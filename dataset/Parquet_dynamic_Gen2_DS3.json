@@ -1,0 +1,41 @@
+{
+	"name": "Parquet_dynamic_Gen2_DS3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeLinkedService_2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container_parameter": {
+				"type": "string"
+			},
+			"folder_parameter": {
+				"type": "string"
+			},
+			"file_parameter": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_parameter",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder_parameter",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container_parameter",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
