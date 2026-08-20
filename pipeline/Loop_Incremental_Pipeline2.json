@@ -327,7 +327,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "POST",
-					"url": "https://prod-20.canadacentral.logic.azure.com:443/workflows/56c8d90980fe4d6480bfaa12153dec91/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=2wDLyUUIgiv6G-AgUjrdSPw18Ol6xQ-b93VGOVNJzHc",
+					"url": "https://prod-16.canadacentral.logic.azure.com:443/workflows/0570bc993db74e77a9b86354d9cc9de6/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=FJpDC4qJWLyncdTIBrH4P-aGQBkrJl2YczE6cP8OuOA",
 					"body": {
 						"value": "{\n  \"pipeline_Name\": \"@{pipeline().Pipeline}\",\n  \"pipeline_runId\": \"@{pipeline().RunId}\",\n  \"status\": \"@{if(equals(activity('CopyAzureSqlLake1_2').status, 'Succeeded'), 'Succeeded', 'Failed')}\"\n}",
 						"type": "Expression"
