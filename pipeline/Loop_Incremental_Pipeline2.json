@@ -335,7 +335,7 @@
 		],
 		"parameters": {
 			"Loop_Input_Parameter": {
-				"type": "string",
+				"type": "array",
 				"defaultValue": [
 					{
 						"SchemaParameter": "dbo",
