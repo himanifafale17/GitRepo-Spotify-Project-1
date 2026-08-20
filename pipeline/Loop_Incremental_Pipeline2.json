@@ -72,8 +72,6 @@
 						{
 							"name": "CopyAzureSqlLake1_2",
 							"type": "Copy",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "LastCDCLookup1_2",
@@ -100,7 +98,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "SELECT * FROM @{item().SchemaParameter}.@{item().TableParameter} WHERE @{item().CDCcolParameter} > '@{if(empty(item().From_Date_Parameter), activity('LastCDCLookup1_2').output.firstRow.cdc, item().From_Date_Parameter)}'",
+										"value": "SELECT * FROM @{item().SchemaParameter}.@{item().TableParameter} WHERE @{item().CDCcolParameter} > '@{if(empty(item().From_Date_Parameter), activity('LastCDCLookup1_2').output.value[0].cdc, item().From_Date_Parameter)}'",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -149,8 +147,6 @@
 						{
 							"name": "If-Incremental-Data-IfCondition1_2",
 							"type": "IfCondition",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "CopyAzureSqlLake1_2",
@@ -169,6 +165,8 @@
 									{
 										"name": "EmptyFileDelete1_2",
 										"type": "Delete",
+										"state": "Inactive",
+										"onInactiveMarkAs": "Succeeded",
 										"dependsOn": [],
 										"policy": {
 											"timeout": "0.12:00:00",
