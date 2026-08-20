@@ -296,6 +296,35 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Alert_WebActivity_1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded",
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-20.canadacentral.logic.azure.com:443/workflows/56c8d90980fe4d6480bfaa12153dec91/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=2wDLyUUIgiv6G-AgUjrdSPw18Ol6xQ-b93VGOVNJzHc",
+					"body": {
+						"value": "{\n  \"pipeline_Name\": \"@{pipeline().Pipeline}\",\n  \"pipeline_runId\": \"@{pipeline().RunId}\",\n  \"status\": \"@{if(equals(activity('CopyAzureSqlLake1_2').status, 'Succeeded'), 'Succeeded', 'Failed')}\"\n}",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
