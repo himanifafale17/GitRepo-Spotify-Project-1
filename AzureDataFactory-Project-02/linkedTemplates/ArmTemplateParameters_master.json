@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "AzureDataFactory-Project-02"
+		},
+		"AzureDataLakeLinkedService_2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDBLinkedService_1_password": {
+			"value": ""
+		},
+		"AzureDataLakeLinkedService_2_properties_typeProperties_url": {
+			"value": "https://storeaccountproject1.dfs.core.windows.net/"
+		},
+		"AzureSqlDBLinkedService_1_properties_typeProperties_server": {
+			"value": "azure-project-1-server.database.windows.net"
+		},
+		"AzureSqlDBLinkedService_1_properties_typeProperties_database": {
+			"value": "AzureDatabaseProject1"
+		},
+		"AzureSqlDBLinkedService_1_properties_typeProperties_userName": {
+			"value": "leader"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
